@@ -113,6 +113,12 @@ public class CharacterController2D : MonoBehaviour {
             m_RigidBody2D.velocity = new Vector2(m_RigidBody2D.velocity.x, m_JumpForceOnEnemies);
         }
 
+        if (collide.gameObject.tag == "JumpItem")
+        {
+            Destroy(collide.gameObject);
+            m_AirJumps++;
+        }
+
     }
 
     //Used by other scripts to check Character status

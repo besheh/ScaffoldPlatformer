@@ -6,6 +6,7 @@ TagManager:
   tags:
   - HurtBox
   - HitBox
+  - JumpItem
   layers:
   - Default
   - TransparentFX
