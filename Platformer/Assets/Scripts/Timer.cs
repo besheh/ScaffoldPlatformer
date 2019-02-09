@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Add script component to Main Camera
+// Bind a Canvas -> Text onto Time Text box
+
 public class Timer : MonoBehaviour
 {
 
@@ -12,6 +15,7 @@ public class Timer : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Time limit for the level
         TimeStamp = 100;
     }
 
