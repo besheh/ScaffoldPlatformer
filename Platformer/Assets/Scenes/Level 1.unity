@@ -429,7 +429,7 @@ PrefabInstance:
     - target: {fileID: 114421021764413650, guid: 5039a551e8afdea41b5b04561da1d70a,
         type: 3}
       propertyPath: m_AirJumps
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5039a551e8afdea41b5b04561da1d70a, type: 3}
