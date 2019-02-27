@@ -7,7 +7,6 @@ using UnityEngine;
 /// </summary>
 public class DeadZone : MonoBehaviour {
 
-
     public GameManager gameManager;
 	// Use this for initialization
 	void Start () {
