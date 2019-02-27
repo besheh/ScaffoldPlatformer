@@ -7,6 +7,8 @@ using UnityEngine;
 /// </summary>
 public class DeadZone : MonoBehaviour {
 
+    public Timer timetext;
+
     public GameManager gameManager;
 	// Use this for initialization
 	void Start () {
@@ -24,7 +26,7 @@ public class DeadZone : MonoBehaviour {
         if(collision.tag == "Player")
         {
             Debug.Log("yoooo");
-            gameManager.GameOver();
+            timetext.FinishAction();
         }
        
     }
