@@ -45,15 +45,13 @@ public class Timer : MonoBehaviour
 {
 
     public Text TimeText;
-    Scene m_scene;
     public float TimeStamp;
 
     // Start is called before the first frame update
     void Start()
     {
         // Time limit for the level
-        m_scene = SceneManager.GetActiveScene();
-        Reset_Timer();
+        TimeStamp = 30;
     }
 
     // Update is called once per frame
@@ -70,18 +68,9 @@ public class Timer : MonoBehaviour
         TimeText.text = minutes + ":" + seconds;
     }
 
-    public void Reset_Timer()
-    {
-        if (m_scene.name == "Level 1")
-            TimeStamp = 30;
-        else
-            TimeStamp = 3600;
-    }
-
     // Called when the timer reaches 0
     public void FinishAction()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
-        Reset_Timer();
     }
 }
