@@ -39,7 +39,11 @@ public class GoalZone : MonoBehaviour
             {
                 SceneManager.LoadScene("Level 3");
             }
-                
+            else if (m_scene.name == "Level 3")
+            {
+                SceneManager.LoadScene("End");
+            }
+
         }
 
     }
