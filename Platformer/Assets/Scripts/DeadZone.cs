@@ -8,11 +8,16 @@ using UnityEngine;
 public class DeadZone : MonoBehaviour {
 
     public Timer timetext;
+    public AudioClip chickenScream;
+    private AudioSource bgm;
+    private Camera m_MainCamera;
 
     public GameManager gameManager;
 	// Use this for initialization
 	void Start () {
-		
+		m_MainCamera = Camera.main;
+        m_MainCamera.enabled = true;
+        bgm = m_MainCamera.GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -26,8 +31,16 @@ public class DeadZone : MonoBehaviour {
         if(collision.tag == "Player")
         {
             Debug.Log("yoooo");
-            timetext.FinishAction();
+            StartCoroutine(SoundRestart());
         }
        
+    }
+
+    IEnumerator SoundRestart()
+    {
+        bgm.Stop();
+        bgm.PlayOneShot(chickenScream);
+        yield return new WaitForSeconds(chickenScream.length);
+        timetext.FinishAction();
     }
 }

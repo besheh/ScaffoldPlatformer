@@ -42,7 +42,8 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(.5f);
         //playerHealth.HealDamage(playerHealth.maxHealth);
         bgm.Stop();
-        bgm.Play(); 
+        bgm.Play();
+
         player.transform.position = SpawnPosition.position;
 
     }

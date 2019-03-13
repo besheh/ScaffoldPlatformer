@@ -1666,6 +1666,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timetext: {fileID: 1979683172}
+  chickenScream: {fileID: 8300000, guid: c6e5044fbce16654ba29690f5f84e4ce, type: 3}
   gameManager: {fileID: 302139390}
 --- !u!61 &1074503125
 BoxCollider2D:

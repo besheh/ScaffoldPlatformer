@@ -27,6 +27,10 @@ public class CharacterController2D : MonoBehaviour {
     public bool m_Immune = false;
     private int m_AirJumpsLeft;
     private Vector3 m_Velocity = Vector3.zero;
+    public AudioClip jumpSound;
+    public AudioClip airJumpSound;
+    public AudioClip chickenNoiseSoft;
+    private AudioSource chickenSounds;
 
     [HideInInspector] public Rigidbody2D m_RigidBody2D;
     //private Animator animator; //If using animations
@@ -34,6 +38,7 @@ public class CharacterController2D : MonoBehaviour {
     void Awake()
     {
         m_RigidBody2D = GetComponent<Rigidbody2D>();
+        chickenSounds = GetComponent<AudioSource>();
         //animator = GetComponent<Animator>(); //get animator component
     }
 
@@ -72,6 +77,7 @@ public class CharacterController2D : MonoBehaviour {
         if (m_Grounded && jump)
         {
             m_Grounded = false;
+            chickenSounds.PlayOneShot(jumpSound);
             m_RigidBody2D.AddForce(new Vector2(m_RigidBody2D.velocity.x, m_JumpForce));
         }
 
@@ -80,6 +86,7 @@ public class CharacterController2D : MonoBehaviour {
         {
             m_Grounded = false;
             m_RigidBody2D.AddForce(new Vector2(0f, m_JumpForce));
+            chickenSounds.PlayOneShot(airJumpSound);
             m_AirJumpsLeft--;
         }
     }

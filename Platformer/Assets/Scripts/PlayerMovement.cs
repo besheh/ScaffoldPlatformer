@@ -13,6 +13,7 @@ public class PlayerMovement : MonoBehaviour {
     bool jump = false;
     public CharacterController2D controller;
 
+
     void Start()
     {
         controller = GetComponent<CharacterController2D>();
