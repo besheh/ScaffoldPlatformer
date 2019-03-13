@@ -11,13 +11,13 @@ public class GameManager : MonoBehaviour {
     private Transform SpawnPosition; //The location that the player will spawn
 
     Camera m_MainCamera;
-    private GameObject bgm;
+    private AudioSource bgm;
 	
     // Use this for initialization
 	void Start () {
         m_MainCamera = Camera.main;
         m_MainCamera.enabled = true;
-        bgm = m_MainCamera.GetComponent<AudioSource>;
+        bgm = m_MainCamera.GetComponent<AudioSource>();
 	}
 	
 
@@ -40,7 +40,7 @@ public class GameManager : MonoBehaviour {
         yield return new WaitForSeconds(.5f);
         //playerHealth.HealDamage(playerHealth.maxHealth);
         bgm.Stop();
-        bgm.Play();
+        bgm.Play(); 
         player.transform.position = SpawnPosition.position;
 
     }
