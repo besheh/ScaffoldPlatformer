@@ -18,6 +18,8 @@ public class GameManager : MonoBehaviour {
         m_MainCamera = Camera.main;
         m_MainCamera.enabled = true;
         bgm = m_MainCamera.GetComponent<AudioSource>();
+        bgm.Stop();
+        bgm.Play();
 	}
 	
 
